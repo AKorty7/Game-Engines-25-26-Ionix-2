@@ -5,7 +5,11 @@
 
 namespace IonixEngine
 {
-    void LayerInput::OnAttach() {}
+    void LayerInput::OnAttach() {
+        
+        m_Input = new Input();
+
+    }
 
     void LayerInput::OnDetach() {}
 

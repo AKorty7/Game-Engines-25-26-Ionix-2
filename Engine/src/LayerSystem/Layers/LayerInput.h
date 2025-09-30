@@ -1,5 +1,6 @@
 #pragma once
 #include "LayerSystem/Layer.h"
+#include "Input/Input.h"
 
 namespace IonixEngine
 {
@@ -12,5 +13,7 @@ namespace IonixEngine
         virtual void OnDetach() override;
         virtual void OnUpdate() override;
         virtual void OnEvent(IonixEvent& e) override;
+
+        Input* m_Input;
     };
 }
