@@ -24,6 +24,29 @@ namespace IonixEngine
                 break;
             }
 
+            case IonixEventType::WindowMinimized:
+            {
+                auto& windowEvent = static_cast<WindowMinimizedEvent&>(e);
+                OnWindowMinimizedEvent(windowEvent);
+                break;
+            }
+
+            case IonixEventType::WindowMaximised:
+            {
+                auto& windowEvent = static_cast<WindowMaximisedEvent&>(e);
+                OnWindowMaximisedEvent(windowEvent);
+                break;
+            }
+
+            case IonixEventType::WindowResized:
+            {
+                auto& windowEvent = static_cast<WindowResizedEvent&>(e);
+                OnWindowResizedEvent(windowEvent);
+                break;
+            }
+
+            
+
             // Add more cases as needed.... (Note: Most engine features don't require events, they
             //                              can just be callable functions.
         }
@@ -31,9 +54,25 @@ namespace IonixEngine
 
     void LayerEditor::OnWindowClosedEvent(WindowClosedEvent& e)
     {
-        std::cout << "IonixEvent: Window closed";
+        std::cout << "IonixEvent: Window closed\n";
 
         Application::Get().m_Running = false;
+        e.Handled = true;
+    }
+    void LayerEditor::OnWindowMinimizedEvent(WindowMinimizedEvent& e)
+    {
+        std::cout << "IonixEvent: Window Minimised\n";
+        e.Handled = true;
+    }
+    void LayerEditor::OnWindowMaximisedEvent(WindowMaximisedEvent& e)
+    {
+        std::cout << "IonixEvent: Window Maximised\n";
+        e.Handled = true;
+    }
+
+    void LayerEditor::OnWindowResizedEvent(WindowResizedEvent& e)
+    {
+        std::cout << "IonixEvent: Window Resized\n";
         e.Handled = true;
     }
 }

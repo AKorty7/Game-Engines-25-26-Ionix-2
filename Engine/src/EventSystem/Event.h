@@ -6,7 +6,10 @@ namespace IonixEngine
     enum class IonixEventType
     {
         None = 0,
-        WindowClosed
+        WindowClosed,
+        WindowMinimized,
+        WindowMaximised,
+        WindowResized
         // ...
     };
 
@@ -26,6 +29,24 @@ namespace IonixEngine
     {
     public:
         WindowClosedEvent() : IonixEvent(IonixEventType::WindowClosed) {}
+    };
+
+    class WindowMinimizedEvent : public IonixEvent
+    {
+    public:
+        WindowMinimizedEvent() : IonixEvent(IonixEventType::WindowMinimized) {}
+    };
+
+    class WindowMaximisedEvent : public IonixEvent
+    {
+    public:
+        WindowMaximisedEvent() : IonixEvent(IonixEventType::WindowMaximised) {}
+    };
+
+    class WindowResizedEvent : public IonixEvent
+    {
+    public:
+        WindowResizedEvent() : IonixEvent(IonixEventType::WindowResized) {}
     };
 
     // .. add more as needed...

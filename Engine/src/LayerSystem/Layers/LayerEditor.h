@@ -15,5 +15,8 @@ namespace IonixEngine
 
     private:
         void OnWindowClosedEvent(WindowClosedEvent& e);
+        void OnWindowMinimizedEvent(WindowMinimizedEvent& e);
+        void OnWindowMaximisedEvent(WindowMaximisedEvent& e);
+        void OnWindowResizedEvent(WindowResizedEvent& e);
     };
 }
