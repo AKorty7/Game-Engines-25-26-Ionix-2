@@ -23,6 +23,7 @@ namespace IonixEngine
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
         ImGuiIO& io = ImGui::GetIO(); (void)io;
+       
         io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
         io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
@@ -48,6 +49,11 @@ namespace IonixEngine
 
         //Shows the big ImGui demo window
         ImGui::ShowDemoWindow();
+        ImGui::GetCursorStartPos();
+        ImGui::Button("Button 1",ImVec2(100, 50));
+		ImGui::Checkbox("Checkbox", nullptr);
+
+
 
         // Rendering
         ImGui::Render();
